@@ -13,12 +13,11 @@ Lista de Tareas con Buscador Entre Tareas
 	- Styles Globals
 	- Variables (colores, medidas, fuentes, etc.)
 	- Diseño y división de Modelo
-	- Establecer Media Queries para Diseño adaptativo 
-
 - Clases:
 	- ControlUI
-	- tasks
+	- Tasks
 	- App (Control de La Aplicación).
+	- DB (Creación y manejo de la Base de Datos Indexada);
 - Archivos:
 	- Selectores
 	- Funciones (Se manejará el comportamiento)
@@ -26,4 +25,4 @@ Lista de Tareas con Buscador Entre Tareas
 - Creación de la Base de Datos
 	- Accesos con exportación para DB.
 	- Creación de Tabla [objectStore]
-	- Creación de Columnas (title,descrip,complete,idTask, date)
+	- Creación de Columnas (textTask,overviewTask,state,id, date)
