@@ -1,0 +1,395 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lexend", sans-serif;
+  scroll-behavior: smooth;
+}
+
+button {
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=text], textarea {
+  outline: none;
+  resize: none;
+  border: none;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+input[type=text]::-moz-placeholder, textarea::-moz-placeholder {
+  font-size: 0.95rem;
+}
+input[type=text]:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  font-size: 0.95rem;
+}
+input[type=text]::placeholder, textarea::placeholder {
+  font-size: 0.95rem;
+}
+
+input[type=submit] {
+  border: none;
+  padding: 10px;
+  background: rgb(0, 123, 255);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  font-size: 0.95rem;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  margin: 5px 0;
+}
+.message.alert {
+  background-color: rgb(243, 52, 52);
+}
+.message.success {
+  background-color: rgb(100, 222, 7);
+}
+
+body {
+  position: relative;
+}
+body aside.ctn-modal-tasks {
+  left: -100vw;
+  transition: left 0.3s ease;
+  z-index: 999;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+}
+body aside.ctn-modal-tasks .ctn-window {
+  max-width: 900px;
+  width: 90%;
+  height: 75vh;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+body aside.ctn-modal-tasks .ctn-window .ctn-modal {
+  color: black;
+  padding: 20px;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "title state" "overview overview";
+  align-items: center;
+  gap: 10px;
+}
+body aside.ctn-modal-tasks .ctn-window .ctn-modal .title {
+  position: relative;
+  grid-area: title;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+body aside.ctn-modal-tasks .ctn-window .ctn-modal .title::before {
+  content: " ";
+  width: 90%;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: -5px;
+  border-radius: 5px;
+}
+body aside.ctn-modal-tasks .ctn-window .ctn-modal .state {
+  grid-area: state;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+body aside.ctn-modal-tasks .ctn-window .ctn-modal .state.Completada {
+  background: rgb(100, 222, 7);
+}
+body aside.ctn-modal-tasks .ctn-window .ctn-modal .state.Pendiente {
+  background: rgb(216, 188, 25);
+}
+body aside.ctn-modal-tasks .ctn-window .ctn-modal .overview {
+  grid-area: overview;
+  height: 100%;
+  overflow-y: auto;
+}
+body aside.ctn-modal-tasks .ctn-btn-modal .btn-modal {
+  position: absolute;
+  background: white;
+  padding: 5px 10px;
+  width: 35px;
+  height: 35px;
+  top: 5vh;
+  right: 5vw;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+body aside.ctn-modal-tasks .ctn-btn-modal .btn-modal::before {
+  content: "X";
+  color: rgb(255, 84, 84);
+  font-weight: 700;
+  font-size: 1rem;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+body aside.ctn-modal-tasks .ctn-btn-modal .btn-modal:hover {
+  transform: rotate(90deg);
+  background: darkgrey;
+}
+body aside.ctn-modal-tasks.active {
+  left: 0;
+}
+body header.top-page {
+  background: brown;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+body main.middle-page {
+  margin-bottom: 50px;
+}
+body main.middle-page .ctn-all-page {
+  margin: 10px auto;
+  max-width: 1000px;
+  padding: 0 1vw;
+  gap: 15px;
+}
+body main.middle-page .ctn-all-page .ctn-interactive-form {
+  padding: 10px;
+}
+body main.middle-page .ctn-all-page .ctn-interactive-form .ctn-info-form .ctn-title-form {
+  text-align: center;
+  font-size: 1.3rem;
+}
+body main.middle-page .ctn-all-page .ctn-interactive-form .ctn-info-form .ctn-form {
+  padding: 10px 0;
+}
+body main.middle-page .ctn-all-page .ctn-interactive-form .ctn-info-form .ctn-form form.form-tasks .ctn-input-form input[type=text], body main.middle-page .ctn-all-page .ctn-interactive-form .ctn-info-form .ctn-form form.form-tasks .ctn-input-form textarea {
+  margin: 5px 0;
+}
+body main.middle-page .ctn-all-page .ctn-interactive-form .ctn-info-form .ctn-form form.form-tasks .ctn-input-form input[type=submit] {
+  cursor: pointer;
+}
+body main.middle-page .ctn-all-page .ctn-search-tasks .ctn-search {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: space-between;
+  align-items: center;
+}
+body main.middle-page .ctn-all-page .ctn-search-tasks .ctn-search .ctn-title-search .ctn-title {
+  background: rgb(0, 132, 255);
+  display: inline;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0px 1px 5px rgb(42, 141, 248);
+}
+body main.middle-page .ctn-all-page .ctn-search-tasks .ctn-search .ctn-form-search .form-search {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+body main.middle-page .ctn-all-page .ctn-search-tasks .ctn-search .ctn-form-search .form-search .ctn-input-form-search {
+  margin-top: 15px;
+  width: 100%;
+}
+body main.middle-page .ctn-all-page .ctn-search-tasks .ctn-search .ctn-form-search .form-search .ctn-input-form-search input[type=search] {
+  outline: none;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+body main.middle-page .ctn-all-page .ctn-search-tasks .ctn-search .ctn-form-search .form-search .ctn-input-form-search input[type=search]::-moz-placeholder {
+  font-size: 0.95rem;
+}
+body main.middle-page .ctn-all-page .ctn-search-tasks .ctn-search .ctn-form-search .form-search .ctn-input-form-search input[type=search]:-ms-input-placeholder {
+  font-size: 0.95rem;
+}
+body main.middle-page .ctn-all-page .ctn-search-tasks .ctn-search .ctn-form-search .form-search .ctn-input-form-search input[type=search]::placeholder {
+  font-size: 0.95rem;
+}
+body main.middle-page .ctn-all-page .ctn-search-tasks .ctn-search .ctn-form-search .form-search .ctn-input-form-search input[type=submit] {
+  cursor: pointer;
+}
+body main.middle-page .ctn-all-page .ctn-tasks-filter {
+  width: 100%;
+}
+body main.middle-page .ctn-all-page .ctn-tasks-filter .ctn-box-filter-tasks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+body main.middle-page .ctn-all-page .ctn-tasks-filter .ctn-box-filter-tasks .ctn-title-filter-tasks .ctn-title {
+  padding: 10px;
+  font-size: 1.1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+body main.middle-page .ctn-all-page .ctn-tasks-filter .ctn-box-filter-tasks .ctn-filter-tasks {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 5px;
+}
+body main.middle-page .ctn-all-page .ctn-tasks-filter .ctn-box-filter-tasks .ctn-filter-tasks .ctn-icon-filter {
+  width: 20px;
+  margin-top: 5px;
+}
+body main.middle-page .ctn-all-page .ctn-tasks-filter .ctn-box-filter-tasks .ctn-filter-tasks .ctn-select-filter select {
+  border: none;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+}
+body main.middle-page .ctn-all-page .ctn-tasks {
+  margin-top: 10px;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task {
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  gap: 10px;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-info-task .ctn-left-info {
+  position: relative;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-info-task .ctn-left-info .ctn-part {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-info-task .ctn-left-info .ctn-part .ctn-title p.title {
+  max-width: 250px;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-info-task .ctn-left-info .ctn-part .ctn-state {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  border-radius: 5px;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-info-task .ctn-left-info .ctn-part .ctn-state p {
+  display: inline-block;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-info-task .ctn-left-info .ctn-part .ctn-state.Completada {
+  background: rgb(100, 222, 7);
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-info-task .ctn-left-info .ctn-part .ctn-state.Pendiente {
+  background: rgb(197, 175, 7);
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-info-task .ctn-left-info::before {
+  content: " ";
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 0;
+  border-radius: 5px;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-info-task .ctn-rigth-info .ctn-part {
+  padding: 10px 0;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-info-task .ctn-rigth-info .ctn-part .descrip-task {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-interactive-task {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-interactive-task .ctn-btn-modal-view {
+  background: rgb(216, 188, 25);
+  transition: box-shadow 0.3s ease;
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-interactive-task .ctn-btn-modal-view button.view-task {
+  color: white;
+  font-weight: 500;
+  background: transparent;
+  padding-left: 5px;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-interactive-task .ctn-btn-modal-view button.view-task span {
+  padding: 5px;
+  background: white;
+  color: black;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-interactive-task .ctn-btn-modal-view button.view-task:hover {
+  text-decoration: underline;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-interactive-task .ctn-btn-modal-view:hover {
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-interactive-task .ctn-options-task button {
+  padding: 7px;
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-interactive-task .ctn-options-task button.btn-edit-task {
+  background: rgb(42, 141, 248);
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .task .ctn-interactive-task .ctn-options-task button.btn-del-task {
+  background: rgb(243, 52, 52);
+}
+body main.middle-page .ctn-all-page .ctn-tasks .ctn-list-tasks .not-tasks {
+  background: rgb(20, 42, 94);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+body footer.bottom-page {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background: brown;
+}
+body footer.bottom-page .ctn-text-footer {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  padding: 10px;
+}/*# sourceMappingURL=styles.css.map */

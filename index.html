@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Task Search</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <aside class="ctn-modal-tasks" id="overview-modal">
+        <div class="ctn-btn-modal">
+            <button class="btn-modal" id="btn-toggle-modal"></button>
+        </div>
+        <div class="ctn-window">
+            <div class="ctn-modal">
+                <p class="title" id="title-task">Mi nueva nota</p>
+                <p class="state complete" id="state-task">Completada</p>
+                <p class="overview" id="overview-task">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem possimus dolore vitae minima. Excepturi natus a nemo animi error ut quisquam corporis non amet perspiciatis sit doloribus mollitia, quidem repellendus ex vero. Nisi deserunt, corporis dolore laborum reiciendis nobis ipsam asperiores, fugit est dolorum quos eaque eius aliquam cumque facere mollitia recusandae, ut velit voluptatum. Incidunt eveniet nesciunt, similique rem explicabo aliquid dicta? Nisi sequi ad nobis praesentium placeat tenetur odio velit, tempora quam, officiis pariatur cumque, asperiores necessitatibus labore porro eaque similique nulla exercitationem natus veritatis ipsam temporibus delectus. Nulla a, aspernatur omnis dicta cumque labore amet deserunt ipsam!</p>
+            </div>
+        </div>
+    </aside>
+    <header class="top-page">
+        <div class="ctn-title-page">
+            <p>Todo List</p>
+        </div>
+    </header>
+    <main class="middle-page">
+        <div class="ctn-all-page">
+            <section class="ctn-interactive-form">
+                <div class="ctn-info-form">
+                    <article class="ctn-title-form">
+                        <p>¡Agrega una Tarea!</p>
+                    </article>
+                    <article class="ctn-form">
+                        <form id="form-tasks" class="form-tasks">
+                            <div class="ctn-input-form">
+                                <input type="text" name="textTask" id="input-title" placeholder="Titulo">
+                            </div>
+                            <div class="ctn-input-form">
+                                <textarea name="overviewTask" id="" cols="30" rows="10" placeholder="Descripción de Tu Tarea"></textarea>
+                            </div>
+                            <div class="ctn-input-form">
+                                <input type="submit" value="Aceptar">
+                            </div>
+                        </form>
+                    </article>
+                </div>
+            </section>
+            <section class="ctn-search-tasks">
+                <article class="ctn-search">
+                    <div class="ctn-title-search">
+                        <p class="ctn-title">Busca una nota específica</p>
+                    </div>
+                    <div class="ctn-form-search">
+                        <form class="form-search" id="form-search">
+                            <div class="ctn-input-form-search">
+                                <input type="search" placeholder="Escribe la Busqueda" name="textSearch" id="text-search">
+                            </div>
+                            <div class="ctn-input-form-search">
+                                <input type="submit" value="Buscar">
+                            </div>
+                        </form>
+                    </div>
+                </article>
+            </section>
+            <section class="ctn-tasks-filter">
+                <article class="ctn-box-filter-tasks">
+                    <div class="ctn-title-filter-tasks">
+                        <p class="ctn-title">Tus Notas</p>
+                    </div>
+                    <div class="ctn-filter-tasks">
+                        <div class="ctn-icon-filter">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
+                            </svg>
+                        </div>
+                        <div class="ctn-select-filter">
+                            <select name="select-filter-data" id="filter-tasks">
+                                <option value="1">Mas Recientes</option>
+                                <option value="2">Mas Antiguos</option>
+                                <option value="3">A - Z</option>
+                            </select>
+                        </div>
+                    </div>
+                </article>
+                <article class="ctn-tasks">
+                    <div class="ctn-list-tasks" id="list-tasks">
+
+
+
+                        <div class="task">
+                            <div class="ctn-info-task">
+                                <div class="ctn-left-info">
+                                    <div class="ctn-part">
+                                        <div class="ctn-title">
+                                            <p class="title">Mi Nota</p>
+                                        </div>
+                                        <div class="ctn-state complete">
+                                            <form>
+                                                <input type="checkbox" id="state-radio" name="stateTask">
+                                                <label for="state-radio">Completada</label>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ctn-rigth-info">
+                                    <div class="ctn-part">
+                                        <p class="descrip-task">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequuntur numquam veniam. Placeat ullam saepe libero asperiores consectetur cumque iusto!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ctn-interactive-task">
+                                <div class="ctn-btn-modal-view">
+                                    <button class="view-task">Ver Nota</button>
+                                </div>
+                                <div class="ctn-options-task">
+                                    <button class="btn-edit-task">Editar</button>
+                                    <button class="btn-del-task">Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="task">
+                            <div class="ctn-info-task">
+                                <div class="ctn-left-info">
+                                    <div class="ctn-part">
+                                        <div class="ctn-title">
+                                            <p class="title">Mi Nota</p>
+                                        </div>
+                                        <div class="ctn-state complete">
+                                            <form>
+                                                <input type="checkbox" id="state-radio" name="stateTask">
+                                                <label for="state-radio">Completada</label>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ctn-rigth-info">
+                                    <div class="ctn-part">
+                                        <p class="descrip-task">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequuntur numquam veniam. Placeat ullam saepe libero asperiores consectetur cumque iusto!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ctn-interactive-task">
+                                <div class="ctn-btn-modal-view">
+                                    <button class="view-task">Ver Nota</button>
+                                </div>
+                                <div class="ctn-options-task">
+                                    <button class="btn-edit-task">Editar</button>
+                                    <button class="btn-del-task">Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+    <footer class="bottom-page">
+        <p class="ctn-text-footer">©<span id="date-footer" class="date-footer"></span> Todos los derechos reservados</p>
+    </footer>
+
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>
